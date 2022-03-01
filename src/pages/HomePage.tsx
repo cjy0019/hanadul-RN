@@ -3,8 +3,9 @@ import React, {useCallback} from 'react';
 import SvgComponent from '../components/common/SvgComponent';
 import {svgModule} from '../assets/svgModule';
 import {palette} from '../styles/palette';
+import {HomeScreenProps} from '../types/navigationTypes/navigationType';
 
-const HomePage = ({navigation}: any) => {
+const HomePage = ({navigation}: HomeScreenProps) => {
   const navigateToEmailLogin = useCallback(() => {
     navigation.navigate('EmailLogin');
   }, [navigation]);
