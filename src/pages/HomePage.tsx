@@ -7,7 +7,7 @@ import {HomeScreenProps} from '../types/navigationTypes/navigationType';
 
 const HomePage = ({navigation}: HomeScreenProps) => {
   const navigateToEmailLogin = useCallback(() => {
-    navigation.navigate('EmailLogin');
+    navigation.push('EmailLogin');
   }, [navigation]);
 
   return (
@@ -50,12 +50,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     justifyContent: 'center',
     height: 420,
+    paddingHorizontal: 30,
     alignItems: 'center',
   },
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: '90%',
+    width: '100%',
     borderRadius: 6,
     backgroundColor: 'green',
     height: 50,
