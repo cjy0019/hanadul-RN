@@ -1,16 +1,22 @@
 import {Pressable, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useCallback} from 'react';
 import SvgComponent from '../components/common/SvgComponent';
 import {svgModule} from '../assets/svgModule';
 import {palette} from '../styles/palette';
 
-const HomePage = () => {
+const HomePage = ({navigation}: any) => {
+  const navigateToEmailLogin = useCallback(() => {
+    navigation.navigate('EmailLogin');
+  }, [navigation]);
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <SvgComponent xml={svgModule.hanadul} width="55%" height="100" />
-          <Pressable style={StyleSheet.compose(styles.button, styles.email)}>
+          <Pressable
+            onPress={navigateToEmailLogin}
+            style={StyleSheet.compose(styles.button, styles.email)}>
             <Text style={[styles.buttonText, styles.fontWhite]}>
               Email Login
             </Text>
