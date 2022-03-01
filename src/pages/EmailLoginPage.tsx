@@ -12,11 +12,16 @@ import SvgComponent from '../components/common/SvgComponent';
 import {svgModule} from '../assets/svgModule';
 import {palette} from '../styles/palette';
 import CheckBox from '@react-native-community/checkbox';
+import {HomeScreenProps} from '../types/navigationTypes/navigationType';
 
-const EmailLoginPage = () => {
+const EmailLoginPage = ({navigation}: HomeScreenProps) => {
   const Login = useCallback(() => {
     Alert.alert('login 되었습니다.');
   }, []);
+
+  const navigateToRegister = useCallback(() => {
+    navigation.push('Register');
+  }, [navigation]);
 
   return (
     <SafeAreaView>
@@ -44,7 +49,9 @@ const EmailLoginPage = () => {
           <Pressable onPress={Login} style={styles.LoginButtonStyle}>
             <Text style={styles.AutoLoginStyle}>Login</Text>
           </Pressable>
-          <Pressable>
+          <Pressable
+            onPress={navigateToRegister}
+            style={styles.styleNavigateAccountYet}>
             <Text style={styles.accountYet}>Hanadul 계정이 없으신가요?</Text>
           </Pressable>
         </View>
@@ -59,6 +66,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     height: '100%',
+    backgroundColor: '#000000',
   },
   LoginContainer: {
     justifyContent: 'center',
@@ -99,7 +107,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  styleNavigateAccountYet: {
+    marginTop: 20,
+    alignItems: 'flex-start',
+    width: '100%',
+  },
   accountYet: {
-    color: `#ffffff`,
+    color: '#ffffff',
+    width: '100%',
+    textDecorationLine: 'underline',
   },
 });
