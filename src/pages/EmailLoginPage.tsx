@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   LoginContainer: {
     justifyContent: 'center',
     height: 420,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     alignItems: 'center',
     backgroundColor: '#000000',
   },
