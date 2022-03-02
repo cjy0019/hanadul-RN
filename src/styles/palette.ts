@@ -3,4 +3,5 @@ export const palette = {
   white: '#ffffff',
   kakao_yellow: '#FFD84D',
   button_red: '#FF7E7E',
+  button_cancel: '#FC4E4E',
 };
